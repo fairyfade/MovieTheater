@@ -1,3 +1,7 @@
+/**@purpose Create a popcorn concession
+ * @author Andy Trinh
+ * @date 11/23/22
+ */
 package ConcessionsFactory;
 
 public class Popcorn implements Concessions {

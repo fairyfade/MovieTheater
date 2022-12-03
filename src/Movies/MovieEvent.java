@@ -1,3 +1,7 @@
+/**@purpose Define a movie event, there will be one movie event per movie showing
+ * @author Chloe Jones
+ * @date 11/23/22
+ */
 package Movies;
 
 import java.util.ArrayList;
@@ -13,14 +17,21 @@ public class MovieEvent extends Observable<MovieEvent> {
     private List<Observer> observers;
 
 
+    /**@param title String, the movie title
+     * @param rRated boolean, whether or not the movie is Rated R (true = rated R, false = not rated R)
+     * @param soldTix Integer, the number of tickets that have been sold for this showing
+     * @param time String, the time the movie showing is taking place
+     * @param room Room, the room the MovieEvent is taking place in
+     */
     public MovieEvent(String title, boolean rRated, Integer soldTix, String time, Room room){
         this.title = title;
         this.rRated = rRated;
         this.soldTix = soldTix;
         this.time = time;
         this.room = room;
-        TicketBooth tb = TicketBooth.getTicketBooth();
+        TicketBooth tb = TicketBooth.getTicketBooth();  //for selling tickets
         this.subscribe(tb);
+        //As long as the number of sold tickets remains below the total seats in the room, keep selling tickets
         if(soldTix < room.getTotalSeats()) this.setSoldOut(false);
         else if(soldTix > room.getTotalSeats()) {
             System.out.println(title + " at "+ time +" has oversold!! Please set room to a larger room.");

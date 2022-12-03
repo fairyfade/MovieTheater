@@ -1,3 +1,7 @@
+/**@purpose Create a concession based on the given concession type
+ * @author Andy Trinh
+ * @date 11/23/22
+ */
 package ConcessionsFactory;
 
 public class SimpleConcessionsFactory extends ConcessionsFactory {

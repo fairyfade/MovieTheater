@@ -1,3 +1,7 @@
+/**@purpose Create the ticket booth that will sell tickets and concessions to customers
+ * @author Chloe Jones
+ * @date 11/23/22
+ */
 package Movies;
 public class TicketBooth implements Observer<MovieEvent> {
     private static final TicketBooth instance = new TicketBooth();

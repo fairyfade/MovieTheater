@@ -1,3 +1,7 @@
+/**@purpose Create a movie theater
+ * @author Chloe Jones
+ * @date 11/23/22
+ */
 package Movies;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -6,7 +10,9 @@ import java.util.List;
 import static java.lang.Integer.parseInt;
 
 public class MovieTheater {
-    private Hashtable<String, MovieEvent> schedule;
+
+    private Hashtable<String, MovieEvent> schedule; 
+
     //hard code in rooms
     private Room r1 = new NormalRoom(50, 1);
     private Room r2 = new NormalRoom(30, 2);
@@ -14,9 +20,10 @@ public class MovieTheater {
     private Room r4 = new NormalRoom(25, 4);
     private Room r5 = new ImaxRoom(60, 5);
     private Room r6 = new ImaxRoom(60, 6);
-    private ArrayList<Room> rooms = new ArrayList<>(List.of(r1, r2, r3, r4, r5, r6 ));
+    private ArrayList<Room> rooms = new ArrayList<>(List.of(r1, r2, r3, r4, r5, r6 ));  //list of rooms
 
     public MovieTheater(String filename) {
+        //Get movie schedule from file 
         MyFileReader fr = new MyFileReader();
         try {
             List<String> data = fr.readFile(filename);
@@ -39,6 +46,10 @@ public class MovieTheater {
 
     }
 
+    /**@purpsoe Assign different movies to different rooms
+     * @param rNum int, the room number that is being assigned
+     * @return the assigned room 
+     */
     public Room assignRoom(int rNum){
         Room assignedRoom = null;
         for(Room r: rooms){
@@ -50,6 +61,9 @@ public class MovieTheater {
         return assignedRoom;
     }
 
+    /**@purpsoe Create the movie showing schedules
+     * @param data List<String>, the list of information read in from a file with the movie schedule
+     * @return schedule, Hashtable<String, MovieEvent>, the movie schedule*/
     public Hashtable<String, MovieEvent> makeSchedule(List<String> data){
         Hashtable<String, MovieEvent> schedule = new Hashtable<String, MovieEvent>();
         for(String line:data){

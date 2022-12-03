@@ -1,3 +1,7 @@
+/**@purpsoe Create candy for the concession stand
+ * @author Andy Trinh
+ * @date 11/23/22
+ */
 package ConcessionsFactory;
 public class Candy implements Concessions {
     @Override
