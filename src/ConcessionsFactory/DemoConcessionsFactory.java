@@ -1,3 +1,5 @@
+package ConcessionsFactory;
+
 public class DemoConcessionsFactory {
     public static void main(String[] args) {
         ConcessionsFactory concessionFactory = new SimpleConcessionsFactory();

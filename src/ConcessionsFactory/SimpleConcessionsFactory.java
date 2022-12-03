@@ -1,3 +1,5 @@
+package ConcessionsFactory;
+
 public class SimpleConcessionsFactory extends ConcessionsFactory {
     public Concessions getConcessions(String concessionType){
         if(concessionType == null){

@@ -1,4 +1,4 @@
-
+package ConcessionsFactory;
 public interface Concessions{
 
     public double getPrice();

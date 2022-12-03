@@ -1,3 +1,4 @@
+package ConcessionsFactory;
 public class Candy implements Concessions {
     @Override
     public double getPrice(){
