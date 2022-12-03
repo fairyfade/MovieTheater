@@ -1,3 +1,5 @@
+package Movies;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +30,15 @@ public class MovieEvent extends Observable<MovieEvent> {
 
         //is it bad practice to subscribe TicketBooth in the constructor?
     }
+
+    public String getTitle(){
+        return this.title;
+    }
+
+    public String getMovieTime(){
+        return this.time;
+    }
+
 
     public void setSoldOut(boolean newVal){
         this.soldOut = newVal;

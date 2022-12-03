@@ -4,10 +4,12 @@
  */
 package Tickets;
 
+import Movies.*;
+
 public class Imax implements Ticket{
     Ticket movieTicket;
     double price;
-    String movie;
+    MovieEvent movie;
     
     public Imax(Ticket movieTicket){
         this.movieTicket = movieTicket;
@@ -16,8 +18,16 @@ public class Imax implements Ticket{
         
     }
 
-    public String getMovie(){
+    public MovieEvent getMovie(){
         return this.movie;
+    }
+
+    public String getMovieTime(){
+        return this.movie.getMovieTime();
+    }
+
+    public String getMovieTitle(){
+        return this.movie.getTitle();
     }
 
     public double getPrice(){
@@ -29,10 +39,10 @@ public class Imax implements Ticket{
     }
 
     public String toString(){
-        return "This is an Imax Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovie();
+        return "This is an Imax Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovieTitle() + "\" at " + this.getMovieTime();
     }
 
     public String getTicketInfo(){
-        return "This is an Imax ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovie();
+        return "This is an Imax ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovieTitle();
     }
 }

@@ -5,10 +5,12 @@
  */
 package Tickets;
 
+import Movies.*;
+
 public class Restricted implements Ticket{
 
     Ticket movieTicket;
-    String movie;
+    MovieEvent movie;
     double price;
     boolean idChecked;
 
@@ -28,8 +30,15 @@ public class Restricted implements Ticket{
         return this.price;
     }
 
-    public String getMovie(){
+    public MovieEvent getMovie(){
         return this.movie;
+    }
+
+    public String getMovieTime(){
+        return this.movie.getMovieTime();
+    }
+    public String getMovieTitle(){
+        return this.movie.getTitle();
     }
 
     /**@purpose check a movie theater guest's ID to check if they are of age to see a movie with a specific rating
@@ -43,10 +52,10 @@ public class Restricted implements Ticket{
 
     
     public String toString(){
-        return "This is a Restricted Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovie();
+        return "This is a Restricted Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovieTitle() + "\" at " + this.getMovieTime();
     }
 
     public String getTicketInfo(){
-        return "This is a restricted ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovie();
+        return "This is a restricted ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovieTitle();
     }
 }

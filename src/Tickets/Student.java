@@ -4,17 +4,27 @@
  */
 package Tickets;
 
+import Movies.*;
+
 public class Student implements Ticket {
     double price;
-    String movie;
+    MovieEvent movie;
 
-    public Student(String movie){
+    public Student(MovieEvent movie){
         this.movie = movie;
         this.price = 5;
     }
 
-    public String getMovie(){
+    public MovieEvent getMovie(){
         return movie;
+    }
+
+    public String getMovieTitle(){
+        return this.movie.getTitle();
+    }
+
+    public String getMovieTime(){
+        return this.movie.getMovieTime();
     }
 
     public void setPrice(double newPrice){
@@ -26,7 +36,7 @@ public class Student implements Ticket {
     }
     
     public String toString(){
-        return "This is a Student Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovie();
+        return "This is a Student Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovieTitle() + "\" at " + this.getMovieTime();
     }
 
     public String getTicketInfo(){

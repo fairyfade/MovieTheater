@@ -1,9 +1,15 @@
 /**@purpose Test the Tickets and decorator pattern implementation
- * @author Faye Landers
- * @date 11/22/22
+ * @author Faye Landers 
+ * @author Chloe Jones
+ * @date 12/03/22
+ * @version 2
  * 
  */
 package Tickets;
+
+import java.util.Enumeration;
+import java.util.Hashtable;
+import Movies.*;
 
 public class TicketTest {
     
@@ -11,21 +17,41 @@ public class TicketTest {
 
         //Test Tickets All Individually and then Together 
 
+        /**Used Chloe's Demo.java to make movie schedule */
+        String filename = "D:\\OOD\\Projects\\Final\\MovieTheater\\src\\Movies\\default_schedule.txt";
+        MovieTheater mt= new MovieTheater(filename);
+        Hashtable<String, MovieEvent> schedule = mt.getSchedule();
+        //for(MovieEvent mv: schedule.values()){
+        //    System.out.println(mv);
+       // } 
+       //get Keys
+       Enumeration enu = schedule.keys();
+       System.out.println("The enumeration of keys are:");
+
+       while (enu.hasMoreElements()) {
+ 
+            // Displaying the Enumeration
+            System.out.println(enu.nextElement());
+        }
+
+        MovieEvent cinderella_1 = schedule.get("Cinderella_4:30-6:15");
+        MovieEvent sorry = schedule.get("Sorry To Bother You_10:35-12:10");
+
         //Individual Tickets
-        Ticket regTicket = new Regular("Alice in Wonderland"); //make a regular ticket 
+        Ticket regTicket = new Regular(cinderella_1); //make a regular ticket 
         System.out.println(regTicket);
 
-        Ticket stTicket = new Student("Cloudy With a Chance of Meatballs"); //make a student ticket
+        Ticket stTicket = new Student(sorry); //make a student ticket
         System.out.println(stTicket);
 
         //One decorator 
         Ticket imaxTicket = new Imax(regTicket); //make an Imax ticket
         System.out.println(imaxTicket);
 
-        Ticket saleTicket = new Sale(regTicket, 0.5); //make a sale ticket
+        Ticket saleTicket = new Sale(stTicket, 0.5); //make a sale ticket
         System.out.println(saleTicket);
 
-        Ticket rTicket = new Restricted(regTicket); //make a restricted ticket
+        Ticket rTicket = new Restricted(stTicket); //make a restricted ticket
         System.out.println(rTicket);
 
         //Two Decorators

@@ -4,11 +4,17 @@
  */
 package Tickets;
 
+import Movies.*;
+
 public interface Ticket{
 
     public double getPrice();
 
-    public String getMovie();
+    public MovieEvent getMovie();
+
+    public String getMovieTitle();
+
+    public String getMovieTime();
 
     public void setPrice(double newPrice);
     

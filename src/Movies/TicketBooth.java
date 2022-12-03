@@ -1,3 +1,4 @@
+package Movies;
 public class TicketBooth implements Observer<MovieEvent> {
     private static final TicketBooth instance = new TicketBooth();
 

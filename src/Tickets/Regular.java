@@ -4,18 +4,28 @@
  */
 package Tickets;
 
+import Movies.*;
+
 public class Regular implements Ticket{
 
     double price;
-    String movie;
+    MovieEvent movie;
 
-    public Regular(String movie){
+    public Regular(MovieEvent movie){
         this.movie = movie;
         this.price = 7;
     }
 
-    public String getMovie(){
+    public MovieEvent getMovie(){
         return this.movie;
+    }
+
+    public String getMovieTitle(){
+        return this.movie.getTitle();
+    }
+
+    public String getMovieTime(){
+        return this.movie.getMovieTime();
     }
 
     public void setPrice(double newPrice){
@@ -27,10 +37,10 @@ public class Regular implements Ticket{
     }
     
     public String toString(){
-        return "This is a Regular Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovie();
+        return "This is a Regular Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovieTitle() + "\" at " + this.getMovieTime();
     }
 
     public String getTicketInfo(){
-        return "This is a regular ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovie();
+        return "This is a regular ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovieTitle();
     }
 }

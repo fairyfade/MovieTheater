@@ -1,3 +1,4 @@
+package Movies;
 public abstract class Room {
     private int totalSeats;
     private int roomNumber;

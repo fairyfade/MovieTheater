@@ -1,5 +1,5 @@
 Cinderella,0,10,4:30-6:15,1
-Rosemary’s Baby,1,15,10:35-12:10,4
+Sorry To Bother You,1,15,10:35-12:10,4
 Cinderella,0,5,5:00-6:45,2
 Fast and Furious 12,1,60,6-7:50,5
 Shrek,0,30,11:15-1:10,2

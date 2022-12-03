@@ -4,10 +4,12 @@
  */
 package Tickets;
 
+import Movies.*;
+
 public class Sale implements Ticket{
     
     Ticket movieTicket;
-    String movie;
+    MovieEvent movie;
     double price;
     double saleDecimal; //sale "percentage off" in decimal for (for example 20% off would be represented as 0.2)
 
@@ -19,8 +21,16 @@ public class Sale implements Ticket{
         this.movie = movieTicket.getMovie();
     }
 
-    public String getMovie(){
+    public MovieEvent getMovie(){
         return this.movie;
+    }
+
+    public String getMovieTitle(){
+        return this.movie.getTitle();
+    }
+
+    public String getMovieTime(){
+        return this.movie.getMovieTime();
     }
 
     public double getPrice(){
@@ -43,10 +53,10 @@ public class Sale implements Ticket{
     }
 
     public String toString(){
-        return "This is a Sale Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovie();
+        return "This is a Sale Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovieTitle() + "\" at " + this.getMovieTime();
     }
 
     public String getTicketInfo(){
-        return "This is a Sale Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovie();
+        return "This is a Sale Ticket, with a price of $" + this.getPrice() + " for the movie, \"" + this.getMovieTitle();
     }
 }
